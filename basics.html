@@ -4,22 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="basics.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="basics.js"></script>
 </head>
 <body>
-    <h1>Test Title</h1>
-    <h2>Test Subtitle</h2>
-    <p>Test Paragraph</p>
-
-    <script>
-        for (let i = 1; i <= 100; i++){
-            let output = "";
-            if (i % 3 == 0) { output = output + "Fizz";} 
-            if (i % 5 == 0) { output = output + "Buzz";} 
-            
+    <h1>Gæt et</h1>
+    <h2>Gæt et tal mellem 1-100</h2>
+    <p>Number: <span class="rnumber"></span></p>
  
-            console.log(output);
-        }
-    </script>
 </body>
 </html>
