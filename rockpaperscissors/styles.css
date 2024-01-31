@@ -10,6 +10,9 @@ h1 {
   text-align: center;
   font-size: 8vw;
 }
+p {
+  font-size: 2vw;
+}
 
 #gamefield {
   position: relative;
@@ -90,6 +93,7 @@ h1 {
   width: 100%;
   margin-top: 10vw;
   pointer-events: none;
+  z-index: 1000;
 }
 
 #texts h1 {
@@ -99,6 +103,7 @@ h1 {
 
 .hidden {
   display: none;
+  opacity: 0;
 }
 
 #buttons {
