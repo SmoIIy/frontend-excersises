@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Guess number</title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <section>
+        <h1>Guess the number!</h1>
+        <h2>Tænk på et tal mellem 1-100 - computeren vil forsøge at gætte det</h2>
+        <button id="start" onclick="startGame()">Start Game</button>
+        <div class="game-screen">
+            <p>Computeren gætter: <span class="guess"></span></p>
+            <input type="button" class="buttons" value="Lavere &darr;">
+            <input type="button" class="buttons" value="Korrekt">
+            <input type="button" class="buttons" value="Højere &uarr;">
+        </div>
+    </section>
+</body>
+</html>
