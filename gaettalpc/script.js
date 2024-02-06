@@ -1,7 +1,7 @@
 //Variables
-let numbers = [];
 let numberOfGuesses = 0;
 let currentGuess;
+let numbersArray
 //Grap buttons
 const buttons = document.querySelectorAll(".button");
 const guess = document.querySelector(".guess");
@@ -16,15 +16,22 @@ function fillArray(){
     for (let i = 1; i <= 101; i++){
         numberss.push(i);
     }
+    console.log(numberss);
     return numberss;
 }
 
-
 //Start game
-
 function startGame(){
-    fillArray;
-    guess.textContent = produceGuess();
+    numbersArray = fillArray();
+    currentGuess = produceGuess();
+    guess.textContent = currentGuess;
+    console.log(sliceDown());
+}
+
+//Test 
+function sliceDown(){
+    console.log(numbersArray.slice(0, currentGuess));
+    return numbersArray.slice(0, currentGuess);
 }
 
 
@@ -34,16 +41,20 @@ function produceGuess(min = 0, max = 100){
  }
  
 
-let numbersArray = fillArray();
-console.log(numberss);
 
 
-function sliceArray(gæt){
-    if (gæt ) {
-        numbers.slice(0, gæt);
+
+function calculateArray(value){
+    if (value === "Lavere") {
+        
+    } else if (value === "Højere"){
+
     } else {
-        numbers.slice(gæt, (numbers.length() - gæt));
+
     }
+}
+function sliceArray(gæt){
+
 }
 
 function addGuess(){
