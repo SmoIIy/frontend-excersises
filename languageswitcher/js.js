@@ -17,13 +17,15 @@ const locale = "da";
 
 const header = document.querySelector(".header");
 const footer = document.querySelector(".footer");
-switchLanguage("da");
+switchLanguageDe();
 
-function switchLanguage(lang){
-        
-        footer.innerHTML = texts.lang.texts[0].text;
-        header.innerHTML = texts.lang.texts[1].text;
-        
+function switchLanguageDe(){
+        footer.innerHTML = texts.de.texts[0].text;
+        header.innerHTML = texts.de.texts[1].text;
+}
+function switchLanguageDa(){
+        footer.innerHTML = texts.da.texts[0].text;
+        header.innerHTML = texts.da.texts[1].text;
 }
 
 
