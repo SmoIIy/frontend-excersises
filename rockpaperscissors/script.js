@@ -56,7 +56,7 @@ function playGame(){
 function addShake(){
     player1.classList.add("shake");
     player2.classList.add("shake");
-    console.log("AddShake")
+    console.log("AddShake");
 }
 
 function reset(){
@@ -80,7 +80,9 @@ player1.addEventListener("animationend", function(){
     } else if (playGame() === "draw"){
         drawText.classList.remove("hidden");
     }
-    console.log("PlayGame")
+    console.log("PlayGame");
+    player1.classList.remove("shake");
+    player2.classList.remove("shake");
 })
 
 onkeyup = (e) => {
