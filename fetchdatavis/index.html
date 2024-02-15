@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch vis</title>
+</head>
+<body>
+    <p></p>
+</body>
+<style>
+    body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+</style>
+<script>  
+     
+     function fetchData() {
+        fetch('https://kea-alt-del.dk/kata-distortion/')
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector("p").textContent = data.inQueue;
+                document.querySelector("p").style.fontSize = `${data.inQueue*10}px`;
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+
+    fetchData();
+
+
+    setInterval(fetchData, 10000); 
+</script>
+</html>
