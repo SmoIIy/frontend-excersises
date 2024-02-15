@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pointer move</title>
+</head>
+<body>
+    
+</body>
+<style>
+    body {
+        background-color: rgba(0, 0, 0, 1);
+
+    }    
+</style>
+    <script>
+        const body = document.querySelector("body");
+
+        const handleOnMove = e => {
+
+            const p = e.clientX / window.innerWidth * 100;
+            const y = e.clientY / window.innerHeight * 100;
+
+            const rgbaValue = `rgba(0, ${y}, ${p}, 1)`;
+
+            body.style.backgroundColor = rgbaValue;
+            console.log(rgbaValue);
+        }
+        document.onmousemove = e => handleOnMove(e);
+
+      
+
+    </script>
+</html>
+
