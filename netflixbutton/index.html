@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflixbutton</title>
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+</head>
+<body >
+    <a href="#" class="button">
+        <div class="icon fa-sharp fa-solid fa-play fa-2x">
+
+        </div>
+        <p class="fab fa-sm">Next Episode</p>
+        <div class="overlay">
+            
+        </div>
+        
+    </a>
+</body>
+<style>
+    body {
+        min-height: 100vh;
+        background-color: #000011;
+        display: grid;
+        place-items: center;
+    }
+    .icon, p {
+        z-index: 1;
+    }
+    
+
+    a {
+        position: relative;
+        height: 25px;
+        background-color: grey;
+        padding: 15px 25px;
+        border-radius: 6px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-decoration: none;
+        color: #000011;
+        overflow: hidden;
+        transition: all 400ms ease;
+    }
+    .overlay {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        background-color: antiquewhite;
+        z-index: 0;
+        animation: slide 4s linear;
+    }
+
+    @keyframes slide {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+
+
+</style>    
+<script>
+    const button = document.querySelector(".button");
+    const overlay = document.querySelector(".overlay");
+
+    overlay.addEventListener("animationend", () =>{
+        button.style.opacity = "0";
+    })
+</script>
+</html>
