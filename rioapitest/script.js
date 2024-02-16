@@ -1,14 +1,16 @@
 window.onload = function() {
-    document.getElementById('searchname').value = '';
-    document.getElementById('servername').value = '';
+    document.querySelector('#searchname').value = '';
+    document.querySelector('#servername').value = '';
+    document.querySelector('#region').value = 'eu';
 };
 
 function fetchData() {
 
-    const playerName = document.getElementById('searchname').value;
-    const serverName = document.getElementById('servername').value;
+    const playerName = document.querySelector('#searchname').value;
+    const serverName = document.querySelector('#servername').value;
+    const region = document.querySelector('#region').value;
 
-    const url = `https://raider.io/api/v1/characters/profile?region=eu&realm=${serverName}&name=${playerName}&fields=mythic_plus_scores_by_season%3Acurrent`
+    const url = `https://raider.io/api/v1/characters/profile?region=${region}&realm=${serverName}&name=${playerName}&fields=mythic_plus_scores_by_season%3Acurrent`
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -29,5 +31,10 @@ function displayData(data){
     rank.style.color = data.mythic_plus_scores_by_season[0].segments.all.color;
 }
 
-
+window.addEventListener("keydown", (e) =>{
+    console.log(e.keyCode);
+    if (e.keyCode === 13) {
+        fetchData();
+    }
+})
 
