@@ -26,7 +26,7 @@ function displayData(data){
     const name = document.querySelector("#name");
     const rank = document.querySelector("#rank");
     name.innerHTML = data.name;
-    rank.innerHTML = data.mythic_plus_scores_by_season[0].segments.all.score;
+    rank.innerHTML = Math.round(data.mythic_plus_scores_by_season[0].segments.all.score);
     //console.log(data.mythic_plus_scores_by_season[0].segments);
     rank.style.color = data.mythic_plus_scores_by_season[0].segments.all.color;
 }

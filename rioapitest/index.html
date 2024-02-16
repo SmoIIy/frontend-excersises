@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Budget raider.io</title>
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
 </head>
 <body>
-    <h2>Hvad rating har <span id="name"></span>?</h2>
-    <p id="rank">0</p>
-    <label for="region">Region</label>
-    <select name="region" id="region">
-        <option value="eu">EU</option>
-        <option value="tw">TW</option>
-        <option value="kr">KR</option>
-        <option value="us">US</option>
-    </select>
-    <label for="searchname">Name: </label>
-    <input type="search" name="searchname" id="searchname">
+    <main class="roboto-regular">
+        <h1>Raider.<span id="io">io</span> </h1>
+        <div class="form">
+            <label for="region">Region</label>
+            <select name="region" id="region">
+                <option value="eu">EU</option>
+                <option value="tw">TW</option>
+                <option value="kr">KR</option>
+                <option value="us">US</option>
+            </select>
+            <label for="searchname">Name: </label>
+            <input type="search" name="searchname" id="searchname">
 
-    <label for="servername">Server: </label>
-    <input type="search" name="servername" id="servername">
+            <label for="servername">Server: </label>
+            <input type="search" name="servername" id="servername">
 
-    <button onclick="fetchData()">Søg</button>
+            <button onclick="fetchData()">Søg</button>
+        </div>
+        <h2>Hvad rating har du?</h2>
+        <p><span id="name">Navn</span> har <span id="rank"> 1000</span> Rating</p>
+    </main>
 </body>
 </html>
