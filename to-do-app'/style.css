@@ -49,3 +49,27 @@ input:focus, select:focus, button:focus {
     border: var(--main) 3px solid;
     border-radius: 4px;
 } 
+
+.list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item {
+    padding: 2px 7px;
+    min-width: 200px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    border: var(--white) solid 1px;
+    border-radius: 4px;
+}
+.list-finished {
+    
+}

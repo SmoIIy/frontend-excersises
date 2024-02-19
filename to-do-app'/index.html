@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do App</title>
-
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts.css">
     <script defer src="script.js"></script>
@@ -16,13 +16,16 @@
             <label for="input">Input</label>
             <input type="text" name="input">
         </div>
+        <h2>Liste</h2>
         <ul class="list">
-            <li class="list-item">
-                <p class="list-task"></p>
-                <p class="list-count"></p>
-                <p class="id"></p>
-                <div class="list-finished"></div>
-            </li>
+            <template id="template">
+                <li class="list-item">
+                    <p class="list-task"></p>
+                    <p class="list-count"></p>
+                    <p class="list-id"></p>
+                    <div class="list-finished"> </div>
+                </li>
+            </template>
         </ul>
     </main>
 </body>
