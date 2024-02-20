@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <main class="roboto-regular">
+        <div class="left">
+            <h1>To-do</h1>
+            <form id="form">
+                <label for="input">Input</label>
+                <input type="text" name="input" id="task-name">
+                <label for="count">Count</label>
+                <input type="number" id="count" name="count">
+                <button id="add">Add item</button>
+            </form>
+        </div>
+        <div class="right">
+            <h2>Liste</h2>
+            <ul class="list">
+        
+            </ul>
+        </div>
+        <template id="template">
+            <li class="list-item">
+                <p class="list-task"></p>
+                <p class="list-count"></p>
+                <input type="checkbox" name="check" id="check">
+                
+            </li>
+        </template>
+    </main>
+    <!-- <p class="list-count"></p>
+        <p class="list-id"></p>
+        <div class="list-finished"></div> -->
+</body>
+</html>
