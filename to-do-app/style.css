@@ -6,6 +6,7 @@
     --accent: #FF858D;
     --white: #F0FFF0;
     --yellow: rgb(255, 200, 0);
+    --olive: #6B8E23;
 }
 
 body {
@@ -76,8 +77,10 @@ button:hover {
     max-height: 400px;
 }
 
-.strikethrough {
+.finished {
     text-decoration: line-through;
+    background-color: var(--olive);
+    opacity: 0.7;
 }
 
 input[type="checkbox"] {

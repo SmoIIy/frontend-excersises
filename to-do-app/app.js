@@ -37,6 +37,7 @@ FORM.addEventListener('submit', function(event) {
   
     // Clear the input field
     document.querySelector('#task-name').value = '';
+    document.querySelector('#count').value = 0;
   });
   
   // Function to render the item list
@@ -54,18 +55,27 @@ function renderItemList() {
     // Create list items and append them to the list
     items.forEach(function(item, index) {
 
-      const template = document.querySelector("#template").content;
-      const copy = template.cloneNode(true);
-      copy.querySelector(".list-task").innerHTML = item.task;
-      copy.querySelector(".list-count").innerHTML = item.count;
-      const CHECK = copy.querySelector("#check");
-      const DELETE = copy.querySelector("#delete");
-      CHECK.checked = item.finished;
-    //   copy.querySelector(".list-task").innerHTML = `Task: ${item.task}`;
-    //   copy.querySelector(".list-count").innerHTML = `Count: ${item.count}`;
+        const template = document.querySelector("#template").content;
+        const copy = template.cloneNode(true);
+        copy.querySelector(".list-task").innerHTML = item.task;
+        copy.querySelector(".list-count").innerHTML = item.count;
+
+        //Variables for eventlisteners
+        const CHECK = copy.querySelector("#check");
+        const DELETE = copy.querySelector("#delete");
+        const LIST_ITEM = copy.querySelector(".list-item");
+        CHECK.checked = item.finished;
+
+        if (item.finished) {
+            LIST_ITEM.classList.add("finished");
+        }
+
 
     const listParent = document.querySelector(".list");
     listParent.appendChild(copy);
+
+
+
     //Delete if deletebutton clicked
     DELETE.addEventListener("click", () => {
         //splice array to remove item
