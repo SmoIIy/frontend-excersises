@@ -11,14 +11,13 @@
 body {
     min-height: 100vh;
     display: grid;
-   
     background-color: var(--background);
     place-items: start;
 }
 
 main {
+
     display: flex;
-    align-items: center;
     gap: 15px;
     justify-content: space-between;
     /* border: solid 1px white;*/
@@ -63,15 +62,18 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 236px;
+
 }
+
 
 .list {
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    max-height: 400px;
 }
 
 .strikethrough {
@@ -89,6 +91,8 @@ input[type="checkbox"]:checked {
 }
 
 .list-item {
+    position: relative;
+    margin: 10px;
     padding: 2px 7px;
     min-width: 200px;
     list-style: none;
@@ -96,8 +100,17 @@ input[type="checkbox"]:checked {
     justify-content: space-around;
     align-items: center;
     gap: 5px;
-
+    border: solid var(--white) 1px;
     border-radius: 4px;
+    transition: all 200ms ease;
+}
+#delete {
+    padding: 4px 5px;
+    position: absolute;
+    left: -2px;
+    top: -20px;
+    color: var(--accent);
+
 }
 .list-task {
     align-self: stretch;

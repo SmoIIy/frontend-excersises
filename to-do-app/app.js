@@ -1,5 +1,5 @@
 //variables
-const FORM = document.querySelector('#form');
+const FORM = document.querySelector("#form");
 const CHECK = document.querySelector("#check");
 
 
@@ -40,27 +40,43 @@ FORM.addEventListener('submit', function(event) {
   });
   
   // Function to render the item list
-  function renderItemList() {
+function renderItemList() {
     let itemList = document.querySelector('.list');
     itemList.innerHTML = ''; // empty previous items
   
     let items = JSON.parse(localStorage.getItem('items')) || [];
+
+    //sort items based on finished or not
+    items.sort(function(a, b) {
+        return a.finished - b.finished;
+      });
   
     // Create list items and append them to the list
-    items.forEach(function(item) {
+    items.forEach(function(item, index) {
 
       const template = document.querySelector("#template").content;
       const copy = template.cloneNode(true);
       copy.querySelector(".list-task").innerHTML = item.task;
       copy.querySelector(".list-count").innerHTML = item.count;
       const CHECK = copy.querySelector("#check");
+      const DELETE = copy.querySelector("#delete");
       CHECK.checked = item.finished;
     //   copy.querySelector(".list-task").innerHTML = `Task: ${item.task}`;
     //   copy.querySelector(".list-count").innerHTML = `Count: ${item.count}`;
 
     const listParent = document.querySelector(".list");
     listParent.appendChild(copy);
+    //Delete if deletebutton clicked
+    DELETE.addEventListener("click", () => {
+        //splice array to remove item
+        items.splice(index, 1);
+        //Update local storage
+        localStorage.setItem("items", JSON.stringify(items));
+        //rerender list
+        renderItemList();
+    })
 
+    //Check checkmark for change and updateList
     CHECK.addEventListener('change', (e) => {
         console.log(e);
         // Toggle completion status
