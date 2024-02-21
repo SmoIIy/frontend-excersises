@@ -58,7 +58,7 @@ function renderItemList() {
         const template = document.querySelector("#template").content;
         const copy = template.cloneNode(true);
         copy.querySelector(".list-task").innerHTML = item.task;
-        copy.querySelector(".list-count").innerHTML = item.count;
+        copy.querySelector("#list-count").innerHTML = item.count;
 
         //Variables for eventlisteners
         const CHECK = copy.querySelector("#check");

@@ -31,10 +31,14 @@
         <template id="template">
             <li class="list-item">
                 <button class="fa-solid fa-x fa-red" id="delete"></button>
-                <p class="list-task"></p>
-                <p class="list-count"></p>
-                <input type="checkbox" name="check" id="check">
-                
+                <div class="info">
+                    <p class="list-task"></p>
+                    <p class="list-count">Antal: <span id="list-count"></span></p>
+                </div>
+                <label class="check-container">
+                    <input type="checkbox" name="check" id="check">
+                    <span class="checkmark"></span>
+                </label> 
             </li>
         </template>
     </main>
