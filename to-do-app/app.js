@@ -5,7 +5,8 @@ const CHECK = document.querySelector("#check");
 
 
 FORM.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
+    //Prevent form from submitting
+    event.preventDefault(); 
   
     // Get the value of the input field
     let taskValue = document.querySelector('#task-name').value;
@@ -25,7 +26,7 @@ FORM.addEventListener('submit', function(event) {
       return; //Prevents the program from further executing
     }
   
-    //Retrieve existing items from local storage or initialize an empty array
+    //grap existing items from local storage or initialize an empty array
     let items = JSON.parse(localStorage.getItem('items')) || [];
   
     // Add the new item to the array
