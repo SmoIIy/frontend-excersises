@@ -11,25 +11,27 @@ FORM.addEventListener('submit', function(event) {
     let taskValue = document.querySelector('#task-name').value;
     let taskCount = document.querySelector('#count').value;
     let id = self.crypto.randomUUID();
+    //Object
     let newItem = {
         task: taskValue,
         count: taskCount,
         finished: false,
         id: id
     };
-  
+    
+    //Check if input has va value
     if (newItem.task.trim() === "") {
       alert('Please enter an item.');
       return; //Prevents the program from further executing
     }
   
-    // Retrieve existing items from local storage or initialize an empty array
+    //Retrieve existing items from local storage or initialize an empty array
     let items = JSON.parse(localStorage.getItem('items')) || [];
   
     // Add the new item to the array
     items.push(newItem);
   
-    // Store the updated array back in local storage
+    //Store the updated array back in local storage
     localStorage.setItem('items', JSON.stringify(items));
   
     // Render the updated list
@@ -40,7 +42,7 @@ FORM.addEventListener('submit', function(event) {
     document.querySelector('#count').value = 0;
   });
   
-  // Function to render the item list
+  //Function to render the item list
 function renderItemList() {
     let itemList = document.querySelector('.list');
     itemList.innerHTML = ''; // empty previous items
@@ -52,7 +54,7 @@ function renderItemList() {
         return a.finished - b.finished;
       });
   
-    // Create list items and append them to the list
+    //Loop over array and render items to the DOM
     items.forEach(function(item, index) {
 
         const template = document.querySelector("#template").content;
@@ -65,7 +67,7 @@ function renderItemList() {
         const DELETE = copy.querySelector("#delete");
         const LIST_ITEM = copy.querySelector(".list-item");
         CHECK.checked = item.finished;
-
+        //add class finished, if checkmark is checked
         if (item.finished) {
             LIST_ITEM.classList.add("finished");
         }
@@ -101,6 +103,6 @@ function renderItemList() {
     });
   }
   
-  // Initial rendering of the item list
-  renderItemList();
+//Initial render of item list
+renderItemList();
   

@@ -17,14 +17,18 @@ body {
 }
 
 main {
-
     display: flex;
     gap: 15px;
     justify-content: space-between;
     /* border: solid 1px white;*/
-    min-width: 400px;
     padding: 25px;
     color: var(--white);
+} 
+
+@media (max-width: 378px) {
+    main {
+        flex-direction: column;
+    }
 }
 
 #form {
@@ -120,5 +124,5 @@ button:hover {
 
 }
 
-/*Checkbox */
+
 
